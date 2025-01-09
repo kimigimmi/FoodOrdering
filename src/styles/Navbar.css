@@ -1,0 +1,30 @@
+.navbar {
+    position: fixed; /* Sayfanın üst kısmına sabitler */
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.navbar .mainLink a {
+    color: white;
+    text-decoration: none;
+    margin: 0 50px; 
+    font-size: 20px;
+    transition: color 0.3s ease; /* Hover animasyonu */
+}
+
+.navbar .mainLink a:hover {
+    color: #f0a500; 
+}
+
+.navbar .mainLink a.active {
+    color: #f0a500; 
+}

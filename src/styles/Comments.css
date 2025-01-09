@@ -1,0 +1,122 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.comment-form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.comment-list {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.comment-list h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name-section {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.comment-section {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
