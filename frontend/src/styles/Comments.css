@@ -1,0 +1,108 @@
+:root{
+  --c-bg: #f6f8fb;
+  --c-card: #ffffff;
+  --c-muted: #6b7280;
+  --c-text: #111827;
+  --c-brand: #0d6efd;
+  --c-brand-600: #0b5ed7;
+  --c-ring: rgba(13,110,253,.35);
+}
+
+/* page */
+.cmt{
+  background: var(--c-bg);
+  min-height: calc(100vh - var(--nav-h, 64px));
+  padding: 28px 16px 64px;
+}
+
+.cmt__inner{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cmt__title{
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--c-text);
+}
+
+/* cards */
+.cmt__card{
+  background: var(--c-card);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+
+.cmt__form{ padding: 16px; margin-bottom: 18px; }
+.cmt__row{ display:flex; gap:10px; }
+
+.cmt__input,
+.cmt__textarea{
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
+}
+.cmt__input::placeholder,
+.cmt__textarea::placeholder{ color: #9aa2af; }
+.cmt__input:focus,
+.cmt__textarea:focus{
+  border-color: var(--c-ring);
+  box-shadow: 0 0 0 4px rgba(13,110,253,.08);
+}
+
+.cmt__btn{
+  margin-top: 10px;
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid var(--c-brand);
+  background: var(--c-brand);
+  color: #fff;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 20px rgba(13,110,253,.2);
+}
+.cmt__btn:hover{ background: var(--c-brand-600); }
+.cmt__btn:active{ transform: translateY(1px); }
+
+.cmt__error{ color: #dc2626; font-weight: 600; text-align:center; padding-top: 6px; }
+
+/* list */
+.cmt__list{
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cmt__item{
+  background: var(--c-card);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+}
+.cmt__name{
+  margin: 0 0 4px;
+  font-weight: 800;
+  color: var(--c-brand);
+}
+.cmt__text{
+  margin: 0;
+  color: var(--c-text);
+  line-height: 1.5;
+}
+.cmt__meta{ margin-top: 6px; font-size: 12px; color: var(--c-muted); }
+
+.cmt__empty{ color: var(--c-muted); text-align:center; padding: 12px; }
+
+@media (max-width: 640px){
+  .cmt__row{ flex-direction: column; }
+}

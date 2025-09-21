@@ -1,0 +1,78 @@
+:root{
+  --nav-h: 64px;
+  --nav-bg: rgba(255,255,255,.88);
+  --nav-border: rgba(0,0,0,.06);
+  --link: #1f2937;
+  --link-weak: #6b7280;
+  --link-active: #0d6efd;
+}
+
+.nav{
+  position: sticky; top:0; z-index: 80;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+  height: var(--nav-h);
+}
+
+.nav__inner{
+  max-width: 1120px; height: 100%;
+  margin: 0 auto; padding: 0 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 16px;
+}
+
+.nav__brand{
+  font-weight: 900; font-size: 18px; color:#111; letter-spacing:.2px;
+}
+
+.nav__links{ display:flex; gap:8px 18px; align-items:center; }
+.nav__link{
+  color:var(--link);
+  padding:8px 12px; border-radius:10px; font-weight:600;
+  transition: background .2s ease, color .2s ease;
+}
+.nav__link:hover{ background: rgba(13,110,253,.06); color:#0b3fbf; }
+.nav__link.active{ color:var(--link-active); background:rgba(13,110,253,.10); }
+
+/* auth */
+.nav__auth{ display:flex; align-items:center; gap:8px; }
+.nav__user{ font-size:13px; color:var(--link-weak); }
+.nav__btn{
+  border:1px solid var(--link-active);
+  background:var(--link-active);
+  color:#fff; padding:8px 12px; border-radius:10px; font-weight:700;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 6px 18px rgba(13,110,253,.25);
+}
+.nav__btn:hover{ background:#0b5ed7; }
+.nav__btn:active{ transform: translateY(1px); box-shadow: 0 4px 12px rgba(13,110,253,.25); }
+.nav__btn--ghost{
+  background:transparent; color:var(--link-active);
+  border-color: rgba(13,110,253,.35);
+}
+.nav__btn--ghost:hover{ background:rgba(13,110,253,.08); }
+
+/* Hamburger (mobil) */
+.nav__burger{ display:none; background:none; border:0; padding:8px; margin-left:-8px; }
+.nav__burger span{ display:block; width:22px; height:2px; background:#333; margin:4px 0; border-radius:2px; }
+
+@media (max-width:768px){
+  .nav__inner{
+    grid-template-columns:auto auto;
+    grid-template-areas:
+      "brand burger"
+      "links links"
+      "auth auth";
+    row-gap:8px; height:auto; padding:8px 12px; align-content:center;
+  }
+  .nav__brand{ grid-area:brand; }
+  .nav__burger{ grid-area:burger; display:inline-block; justify-self:end; }
+  .nav__links{ grid-area:links; display:none; flex-wrap:wrap; }
+  .nav__links.is-open{ display:flex; }
+  .nav__auth{ grid-area:auth; }
+}
+
+/* Klasik <ul> bullet'larını sıfırla */
+ul{ margin:0; padding:0; list-style:none; }

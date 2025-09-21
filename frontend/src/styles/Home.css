@@ -1,0 +1,159 @@
+/* -------- Home page styles -------- */
+
+:root{
+  --bg-dark: #0b0f14;
+  --glass: rgba(20, 24, 29, .55);
+  --text: #e9edf3;
+  --text-weak: #c9d1dd;
+  --brand: #ffd166;
+  --brand-700: #f9b938;
+  --ring: rgba(255,255,255,.28);
+}
+
+/* ===== HERO ============================================================= */
+
+.hero{
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  color: #fff;                /* metinler net BEYAZ */
+  background:
+    url("https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1920&auto=format&fit=crop")
+    center/cover no-repeat fixed;
+  margin: 0;
+  padding: 0;
+  isolation: isolate;         /* overlay katmanları düzgün karışsın */
+}
+
+/* koyu scrim + alttan yukarı gradient; metni okunur yapar */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(1200px 420px at 50% 30%, rgba(0,0,0,.55), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.75) 100%);
+  z-index:-1;
+}
+
+.hero__overlay{
+  width: 100%;
+  height: 100%;
+}
+
+.hero__container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6.5rem 1.25rem 4.5rem;
+  text-align: center;
+}
+
+.hero__title{
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: .3px;
+  line-height: 1.08;
+  margin: 0 0 .85rem;
+  text-shadow: 0 10px 40px rgba(0,0,0,.45);
+}
+
+.hero__title span{
+  background: linear-gradient(90deg, #fff 0%, #ffe9a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__subtitle{
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+  color: var(--text-weak);
+  margin: 0 0 2rem;
+}
+
+/* ===== Buttons ========================================================== */
+
+.btn{
+  --h: 46px;
+  display:inline-flex; align-items:center; justify-content:center;
+  height:var(--h); padding:0 18px;
+  border-radius: 12px;
+  font-weight: 700; text-decoration:none;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  border:1px solid transparent;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.btn:active{ transform: translateY(1px) scale(.99); }
+
+.btn--primary{
+  background: var(--brand);
+  color: #1a1d22;
+  border-color: rgba(0,0,0,.18);
+}
+.btn--primary:hover{ background: var(--brand-700); }
+
+.btn--outline{
+  background: rgba(255,255,255,.04);
+  color:#fff;
+  border-color: var(--ring);
+}
+.btn--outline:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.45);
+}
+
+.hero__cta{ display:inline-flex; gap:12px; }
+
+/* ===== FEATURES ========================================================= */
+
+.features{
+  background:
+    radial-gradient(1200px 360px at 50% -120px, rgba(255,255,255,.10), transparent 70%)
+    var(--bg-dark);
+  padding: 40px 16px 72px;
+}
+
+.features__grid{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;
+}
+
+.card{
+  background: var(--glass);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(6px);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.22);
+}
+
+.card__title{
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.card__text{
+  margin: 0;
+  color: var(--text-weak);
+  line-height: 1.55;
+  font-size: .98rem;
+}
+
+/* ===== RESPONSIVE ======================================================= */
+
+@media (max-width: 980px){
+  .hero{ min-height: 64vh; }
+  .features__grid{ grid-template-columns: 1fr; }
+  .hero__container{ padding-top: 5.2rem; }
+}
