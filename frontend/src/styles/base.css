@@ -1,0 +1,21 @@
+/* --- Reset & temel değişkenler --- */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+:root { --nav-h: 64px; }
+
+body{
+  margin: 0;                    /* <— gri boşluğu yapan default margin */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111;
+  background: #fafafa;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+/* Genel layout yardımcıları */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: 16px; }
+.page { min-height: calc(100% - var(--nav-h)); }
+
+/* İlk elemanın tepe marjını kırp (h1 default margin-top’ı sebep olur) */
+main > :first-child { margin-top: 0; }
