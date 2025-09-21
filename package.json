@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "@types/passport-google-oauth20": "^2.0.16",
-    "@types/passport-microsoft": "^2.1.0"
-  }
-}
