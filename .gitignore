@@ -23,3 +23,17 @@ yarn-debug.log*
 yarn-error.log*
 
 /generated/prisma
+
+
+# dotenv
+.env
+.env.*
+**/.env
+**/.env.*
+
+# monorepo alt klasörleri için
+node_modules
+**/node_modules
+**/.cache
+dist
+build
